@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+    radial-gradient(circle at top left, rgba(229, 9, 20, 0.35), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(180, 12, 12, 0.35), transparent 50%),
+    #050505;
+}
+
+.auth-card {
+  width: min(420px, 100%);
+  background: rgba(0, 0, 0, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 32px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.4);
+}
+
+.brand {
+  color: #e50914;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 12px;
+}
+
+.auth-card h2 {
+  margin: 0 0 18px;
+}
+
+.auth-form {
+  display: grid;
+  gap: 12px;
+}
+
+.auth-form input {
+  background: rgba(22, 22, 22, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  color: #fff;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+
+.auth-form button {
+  border: 0;
+  border-radius: 6px;
+  background: #e50914;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.auth-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-switch {
+  margin: 16px 0 0;
+  color: #b3b3b3;
+  font-size: 0.92rem;
+}
+
+.auth-switch button {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+}
+
+.error-text {
+  color: #ff8f8f;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.home-page {
+  min-height: 100vh;
+  background: #141414;
+}
+
+.hero {
+  min-height: 72vh;
+  padding: 28px 4vw 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-position: center top;
+  background-size: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0.22) 15%,
+    rgba(20, 20, 20, 0.7) 75%,
+    #141414 100%
+  );
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin-top: auto;
+}
+
+.top-nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-nav h1 {
+  margin: 0;
+  color: #e50914;
+  letter-spacing: 0.12em;
+}
+
+.top-nav button {
+  border: 0;
+  border-radius: 4px;
+  background: #e50914;
+  color: white;
+  font-weight: 600;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.hero h2 {
+  margin: 0 0 6px;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+}
+
+.hero p {
+  margin: 6px 0;
+  color: #e8e8e8;
+}
+
+.rows {
+  margin-top: -70px;
+  position: relative;
+  z-index: 3;
+  padding-bottom: 30px;
+}
+
+.movie-row {
+  padding: 0 4vw;
+  margin-bottom: 26px;
+}
+
+.movie-row h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.card-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(150px, 190px);
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.card-strip::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-strip::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 6px;
+}
+
+.movie-card {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 180ms ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+  z-index: 5;
+}
+
+.movie-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  display: block;
+  object-fit: cover;
+}
+
+.movie-meta {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.88));
+  padding: 8px;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 24px;
+  }
+
+  .hero {
+    min-height: 66vh;
+  }
+
+  .rows {
+    margin-top: -50px;
+  }
+
+  .card-strip {
+    grid-auto-columns: minmax(130px, 160px);
+  }
+}
